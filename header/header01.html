@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>헤더 유형01</title>
+
     <style>
         /* fonts */
-        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
 
-        .nexon {
-            font-family: 'NexonLv1Gothic';
+        .google {
+            font-family: 'Host Grotesk';
             font-weight: 400;
         }
 
@@ -21,7 +22,7 @@
         }
         a{
             text-decoration: none;
-            color: #000;
+            color: #ffffff;
         }
         li {
             list-style: none;
@@ -39,7 +40,7 @@
             justify-content: space-between;
             padding: 0 20px;
             box-sizing: border-box;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #cacaca;
 
         }
         .header__logo {
@@ -74,17 +75,20 @@
         }
         .header__member a {
             font-size: 16px;
-            border: 1px solid #000;
+            border: 1px solid #ffffff;
             padding: 10px 30px;
             border-radius: 50px;
         }
     </style>
 </head>
+
 <body>
-    <header id="headerType" class="header__wrap nexon">
+    <div style="background-color: #E99D56">
+
+    <header id="headerType" class="header__wrap google">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="#">web <em>site</em></a>
+                <a href="#">web<em>site</em></a>
             </div>
             <nav class="header__menu">
                 <ul>
@@ -97,7 +101,9 @@
             <div class="header__member">
                 <a href="#">LOG IN</a>
             </div>
+            
         </div>
     </header>
+</div>
 </body>
 </html>
