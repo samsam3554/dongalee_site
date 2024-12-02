@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>헤더 유형01</title>
+
+    <style>
+        /* fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+        .google {
+            font-family: 'Host Grotesk';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        /* headerType */
+        
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #cacaca;
+
+        }
+        .header__logo {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 20%;
+        }
+        .header__logo em{
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .header__menu{
+            width: 60%;
+            text-align: center ;
+        }
+        .header__menu li {
+            display: inline;
+        }
+        .header__menu li a {
+            padding: 13px 30px;
+            margin: 0 5px;
+            transition: backround-color 0.33s;
+        }
+        .header__menu li a:hover {
+            background-color: #F1F1F1;
+            border-radius: 5px;
+        }
+        .header__member {
+            width: 20%;
+            text-align: right;
+        }
+        .header__member a {
+            font-size: 16px;
+            border: 1px solid #e6a92e;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+    </style>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+        .google {
+            font-family: 'Host Grotesk';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-style: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        /* sliderType */
+        
+        .slider {
+            position: relative;
+        }
+        .slider__img {
+            background: url("14_22_17__644612092bafc[W578-].png") no-repeat center center / cover;
+    }   
+        .slider__img .desc {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        .slider__img .desc span {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 1px 14px 0 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .slider__img .desc h3 {
+            font-style: 100px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: -8px;
+        }
+        .slider__img .desc p {
+            font-style: 20px;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 130px;
+        }
+        .slider__img .desc .btn a {
+            font-style: 16px;
+            background: #fff;
+            padding: 11px 50px;
+            display: inline-block;
+        }
+
+        .slider__img .desc .btn a.black {
+            background: #000;
+            color: #fff;
+        }
+
+        .slider__arrow a {
+            position: absolute;
+            top: 50px;
+            transform: translateY(-50px);
+            width: 30px;
+            height: 56px;
+            background-image: url(img/slider_icon.svg);
+        }
+        .slider__arrow a.left {
+            left: 20px;
+        }
+        .slider__arrow a.right {
+            right: 20px;
+            background-position: -50px 0;
+        }
+
+        .slider__dot {
+            position: absolute;
+            left: 50px;
+            bottom: 25px;
+            transform: translateX(-50%);
+        }
+        .slider__dot a {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-image: url(img/slider_icon.svg);
+            background-position: -20px -70px;
+        }
+        .slider__dot a.active {
+            background-position: 0px -70px;
+        }
+        .slider__dot a.play {
+            background-position: -40px -70px;
+        }
+        .slider__dot a.stop {
+            background-position: -60px -70px;
+        }
+
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+        .google {
+            font-family: 'Host Grotesk';
+            font-weight: 400;
+        }
+        .p1{
+        color: #ffff;
+        font-size: 20px;
+    }
+        .p2{
+        color: #ffff;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+        .gradation1{
+                margin-top: 0;
+                height: 900vh;
+                background: #1D2B64;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to bottom,#ffffff, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to bottom, #ffffff, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-size: 200% 200%; /* 애니메이션 움직임 영역 확장 */
+                animation: gradientShift 15s infinite; /* 애니메이션 적용 */
+            }
+    
+            @keyframes gradientShift {
+                0% {
+                    background-position: 0% 0%;
+                }
+                50% {
+                    background-position: 100% 100%;
+                }
+                100% {
+                    background-position: 0% 0%;
+                }
+            }
+        .gradation2{
+            margin: 0;
+           
+        }
+
+        .animation {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 200vh; /* 스크롤을 위한 충분한 높이 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(50px); /* 처음 위치 */
+            transition: all 0.6s ease; /* 부드러운 애니메이션 */
+            margin: 50px 0;
+            padding: 20px;
+            background: white;
+            width: 80%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+          }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0); /* 위로 올라오도록 */
+          }
+       
+    </style>
+</head>
+
+<body>    
+    <div style="background-color: #ffffff">
+        <header id="headerType" class="header__wrap google">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">web<em>site</em></a>
+            </div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#"> INTRODUCE OUR</a></li>
+                    <li><a href="#">TO BE CONTINUE</a></li>
+                    <li><a href="#">TO BE CONTINUE</a></li>
+                    <li><a href="joinus.html">JOIN US</a></li>
+                </ul>
+            </nav>
+            <div class="header__member">
+                <a href="login01.html">LOG IN</a>
+            </div>
+            
+        </div>
+        </header>
+    </div>
+
+    <section id="sliderType" class="slider__wrap google">
+        <h2 class="blind">슬라이드 유형</h2>
+        <div class="slider__inner">
+            <div class="slider">
+                <div class="slider__img">
+                    <div class="desc">
+                      <span>동아리 이름</span>
+                      <h3 style="font-size: 110px;">new frontend </h3>
+                      <p>
+                        사나이 가는 길. <br />
+                        이 수라의 길 함께 걸으실랍니까? 
+                      </p>
+                      <div class="btn">
+                        <a href="/">자세히 보기</a>
+                        <a href="/" class="black">사이트 보기</a>
+                      </div>
+
+                </div>
+            <div class="slider__arrow">
+                <a href="/" class="left"><span class="ir">이전 이미지</span></a>
+                <a href="/" class="right"><span class="ir">다음 이미지</span></a>
+
+            </div>
+            <div class="slider__dot">
+                <a href="/" class="dot active"><span class="ir">1</span></a>
+                <a href="/" class="dot"><span class="ir">2</span></a>
+                <a href="/" class="dot"><span class="ir">3</span></a>
+                <a href="/" class="play"><span class="ir">플레이</span></a>
+                <a href="/" class="stop"><span class="ir">정지</span></a>
+
+            </div>
+        </div>    
+    </div>
+    </section>
+
+    <section class="gradation1">
+    <div class="google animation" style="padding-top: 1600px;">
+        <h1 class="setion">이곳은 introduce our 부분의 내용을 쓰는 곳입니다.</h1>
+        <h3 class="section"  style="margin-top: 30px;">
+            저희 동아리는 함께 코딩을 공부하면서 개발 활동을 하는 동아리입니다. <br/><br/> 
+            동아리 내에서 마음이 맞는 사람을 찾아 함께 대외활동을 하면서 <br/><br/>
+            단순히 저희 기수에서 그치는 것이 아닌, <br/><br/>
+            후대로 계속 이어갈 수 있는 불이 꺼지지 않는 동아리를 목표로 하고 있습니다.  <br/><br/>
+            도움을 얻고자 한다면, 얻은 도움으로 또 다른 도움을 줄려고 노력할줄도 알아야한다 라는 생각을 <br/><br/>
+            바탕으로 서로서로 긍정적인 영향을 주고 받으며 대학생활을 풍성하고 의미있게 만들려고 합니다.<br/><br/>
+            사회에 나간 후에도 어벤저스처럼 서로에게 필요할때 도움이 될 수 있는 공동체를 만들어보고 싶은것이 동아리 창시자 이현빈의 바램입니다. 
+        </h3>
+        <script>
+            // 모든 섹션 요소 가져오기
+            const sections = document.querySelectorAll('.section');
+        
+            // 스크롤 이벤트 처리
+            const handleScroll = () => {
+              sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+        
+                // 섹션이 화면 중앙에 가까워지면 "visible" 클래스 추가
+                if (rect.top < windowHeight - 100) {
+                  section.classList.add('visible');
+                }
+              });
+            };
+        
+            // 이벤트 리스너 추가
+            window.addEventListener('scroll', handleScroll);
+        
+            // 초기 실행 (첫 화면에 보이는 섹션 처리)
+            handleScroll();
+        </script>
+
+    </div>
+    </section>
+
+    <section class="google gradation2 animation";>
+        <div class="#">
+
+        <h1 class = "p1" ><br/><br/>introduce our</h1>
+    
+
+        </div>
+    </section>
+
+    <section class="google";>
+        <div class="gradation4">
+
+        
+    
+        </div>
+    </section>
+
+    <section class="google";>
+        <div class="#">
+
+
+
+        </div>
+    </section>
+
+    <section class="google";>
+        <div class="gradation3">
+
+        
+    
+        </div>
+    </section>
+
+</body>
+</html>
+
