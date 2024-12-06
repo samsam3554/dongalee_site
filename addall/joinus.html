@@ -2,195 +2,247 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오징어 게임 테마 폼</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      /* 전체 스타일 */
-      body {
-        font-family: 'Nanum Gothic', sans-serif;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #111; /* 검은색 배경 */
-        color: white;
-        overflow: hidden;
-      }
-  
-      /* 폼 스타일 */
-      #dataForm {
-        background-color: #F08080; /* 분홍색 배경 */
-        padding: 40px;
-        border: 5px solid #000; /* 검은색 테두리 */
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-        text-align: center;
-        width: 400px;
-        animation: pulsate 1.5s infinite; /* 폼 깜빡이는 효과 */
-      }
-  
-      /* 입력 필드와 버튼 */
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 1.2em;
-      }
-  
-      input[type="text"],
-      input[type="number"] {
-        width: 90%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 2px solid #000;
-        border-radius: 8px;
-        font-size: 1em;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-      }
-  
-      button {
-        padding: 10px 20px;
-        font-size: 1.2em;
-        background-color: #00A86B; /* 초록색 */
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.3s;
-      }
-  
-      button:hover {
-        transform: scale(1.1);
-        background-color: #00875A; /* 짙은 초록 */
-      }
-  
-      button:active {
-        transform: scale(0.9);
-      }
-  
-      /* 동적인 효과 */
-      @keyframes pulsate {
-        0% {
-          box-shadow: 0 0 20px rgba(240, 128, 128, 0.8);
-        }
-        50% {
-          box-shadow: 0 0 40px rgba(240, 128, 128, 1);
-        }
-        100% {
-          box-shadow: 0 0 20px rgba(240, 128, 128, 0.8);
-        }
-      }
-  
-      /* 배경에 떠다니는 동그라미, 세모, 네모 */
-      .shape {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        border: 5px solid white;
-        animation: float 4s infinite linear;
-      }
-  
-      .circle {
-        border-radius: 50%;
-        top: 10%;
-        left: 10%;
-      }
-  
-      .triangle {
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-bottom: 100px solid white;
-        top: 50%;
-        left: 20%;
-      }
-  
-      .square {
-        top: 30%;
-        left: 70%;
-      }
-  
-      /* 떠다니는 모양 애니메이션 */
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-30px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-  
-      /* 오른쪽 캐릭터 */
-      .character {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 150px;
-        animation: wave 2s infinite ease-in-out;
-      }
-  
-      /* 캐릭터 손 흔들기 */
-      @keyframes wave {
-        0% {
-          transform: rotate(0deg);
-        }
-        50% {
-          transform: rotate(10deg);
-        }
-        100% {
-          transform: rotate(0deg);
-        }
-      }
-        </style>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오징어 게임 테마 폼</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 공통 스타일 */
+    body {
+      font-family: 'Nanum Gothic', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      color: white;
+      overflow: hidden;
+    }
 
+    /* 폼 스타일 */
+    #dataForm {
+      background-color: #F08080;
+      padding: 40px;
+      border: 5px solid #000;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      width: 400px;
+      animation: pulsate 1.5s infinite;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      font-size: 1em;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #00A86B;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #00875A;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* 시간 슬롯 */
+    .time-slots {
+      margin-top: 20px;
+    }
+
+    .time-slot {
+      margin: 5px 0;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .time-slot.selected {
+      background-color: #28a745;
+      color: white;
+    }
+
+    /* 애니메이션 */
+    @keyframes pulsate {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(240, 128, 128, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(240, 128, 128, 1);
+      }
+    }
+
+    .shape {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 5px solid white;
+      animation: float 4s infinite linear;
+    }
+
+    .circle {
+      border-radius: 50%;
+      top: 10%;
+      left: 10%;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid white;
+      top: 50%;
+      left: 20%;
+    }
+
+    .square {
+      top: 30%;
+      left: 70%;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    .character {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 150px;
+      animation: wave 2s infinite ease-in-out;
+    }
+    @keyframes wave {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+    }
+  </style>
 </head>
-<body class="back_groundimg">
+<body>
+  <!-- 폼 -->
+  <form id="dataForm">
+    <h1>지원서</h1>
+    <label for="subjectandname">학과, 이름:</label>
+    <input type="text" id="subjectandname" name="subjectandname" required>
 
-   <div >
-    <form id="dataForm">
-        <label for="subjectandname">학과, 이름:</label>
-        <input type="text" id="subjectandname" name="subjectandname" required>
-        <br>
-        <label for="studentnumber">학번:</label>
-        <input type="number" id="studentnumber" name="studentnumber" required>
-        <br>
-        <button type="submit">제출</button>
-    </form>
-   </div>
+    <label for="studentnumber">학번:</label>
+    <input type="number" id="studentnumber" name="studentnumber" required>
 
- <!-- 배경 모양 -->
- <div class="shape circle"></div>
- <div class="shape triangle"></div>
- <div class="shape square"></div>
+    <h1>면접 날짜와 시간 선택</h1>
 
- <!-- 캐릭터 이미지 -->
- <img src="176509940-영화-오징어-게임의-명함-원-삼각형-사각형.jpg" alt="Squid Game Guard" class="character">
+    <label for="date-picker">날짜를 선택하세요:</label>
+    <input type="date" id="date-picker" min="2024-12-10" max="2025-01-31">
 
-   
-    <script>
-        document.getElementById('dataForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = {
-                subjectandname: document.getElementById('subjectandname').value,
-                studentnumber: document.getElementById('studentnumber').value,
-            };
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            alert('지원해주셔서 감사합니다!');
+    <div class="time-slots" id="time-slots">
+      <p>시간을 선택하세요:</p>
+      <div class="time-slot" data-time="10:00">10:00</div>
+      <div class="time-slot" data-time="14:00">14:00</div>
+    </div>
+
+    <button id="submit-button" class="submit-button" disabled>제출</button>
+  </form>
+
+  <!-- 배경 모양 -->
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape square"></div>
+
+  <!-- 캐릭터 -->
+  <img src="176509940-영화-오징어-게임의-명함-원-삼각형-사각형.jpg" alt="Squid Game Guard" class="character">
+
+  <script>
+    const dataForm = document.getElementById('dataForm');
+    const datePicker = document.getElementById('date-picker');
+    const timeSlots = document.querySelectorAll('.time-slot');
+    const submitButton = document.getElementById('submit-button');
+    let selectedDate = null;
+    let selectedTime = null;
+
+    // 날짜 선택 이벤트
+    datePicker.addEventListener('change', (e) => {
+      selectedDate = e.target.value;
+      enableSubmitButton();
+    });
+
+    // 시간 슬롯 선택 이벤트
+    timeSlots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        timeSlots.forEach(s => s.classList.remove('selected'));
+        slot.classList.add('selected');
+        selectedTime = slot.dataset.time;
+        enableSubmitButton();
+      });
+    });
+
+    // 제출 버튼 활성화
+    function enableSubmitButton() {
+      submitButton.disabled = !(selectedDate && selectedTime);
+    }
+
+    // 데이터 제출
+    dataForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        subjectandname: document.getElementById('subjectandname').value,
+        studentnumber: document.getElementById('studentnumber').value,
+        date: selectedDate,
+        time: selectedTime
+      };
+
+      console.log('전송 데이터:', formData);
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/select_slot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
         });
-    </script>
-
+        const result = await response.json();
+        alert('제출 완료: ' + JSON.stringify(result));
+      } catch (error) {
+        alert('제출 실패: 서버와 연결을 확인하세요.');
+      }
+    });
+  </script>
 </body>
+
 </html>
